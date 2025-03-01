@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Personal Finance Assistant</h1>
+        </header>
+        
+        <div class="dashboard">
+            <div class="balance-section">
+                <h2>Current Balance</h2>
+                <p id="current-balance">$0.00</p>
+            </div>
+            
+            <div class="income-expense-section">
+                <div class="income">
+                    <h3>Income</h3>
+                    <p id="total-income">$0.00</p>
+                </div>
+                <div class="expenses">
+                    <h3>Expenses</h3>
+                    <p id="total-expenses">$0.00</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="transaction-form">
+            <h2>Add New Transaction</h2>
+            <form id="add-transaction-form">
+                <div class="form-group">
+                    <label for="transaction-description">Description</label>
+                    <input type="text" id="transaction-description" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="transaction-amount">Amount ($)</label>
+                    <input type="number" id="transaction-amount" step="0.01" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="transaction-type">Type</label>
+                    <select id="transaction-type" required>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="transaction-category">Category</label>
+                    <select id="transaction-category">
+                        <option value="salary">Salary</option>
+                        <option value="food">Food</option>
+                        <option value="rent">Rent</option>
+                        <option value="utilities">Utilities</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="transaction-date">Date</label>
+                    <input type="date" id="transaction-date" required>
+                </div>
+                
+                <button type="submit" class="btn">Add Transaction</button>
+            </form>
+        </div>
+        
+        <div class="transaction-history">
+            <h2>Transaction History</h2>
+            <div class="filter-controls">
+                <label for="filter-type">Filter by:</label>
+                <select id="filter-type">
+                    <option value="all">All</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+            <ul id="transaction-list"></ul>
+        </div>
+        
+        <div class="budget-section">
+            <h2>Budget Tracking</h2>
+            <div id="budget-progress"></div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
